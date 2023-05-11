@@ -137,18 +137,16 @@ public class VariablesTheme {
     //8.Вывод количества сотен, десятков и единиц числа
     System.out.println("\n\n8.Вывод количества сотен, десятков и единиц числа\n");
 
-    int num = 323;
+    int num = 123;
     int hundreds = num / 100;
-    int tens = num / 10;
-    int ones = num / 1; 
+    int tens = num / 10 % 10;
+    int ones = num % 10; 
 
     System.out.println("Число " + num + " содерижит:\n" +
             hundreds + " сотен\n" + 
             tens + " десятков\n" + 
             ones + " единиц\n");
 
-    tens %= 10;
-    ones %= 10;
     int sumDigits = hundreds + tens + ones;
     int productDigits = hundreds * tens * ones;
 
