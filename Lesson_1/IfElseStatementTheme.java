@@ -186,7 +186,7 @@ class IfElseStatementTheme {
     //9.Подсчет количества банкнот из банкомата
     System.out.println("\n\n9.Подсчет количества банкнот\n");
 
-    int cash = 1000;
+    int cash = 567;
     int hundreds = cash / 100;
     int tens = cash / 10 % 10;
     int ones = cash % 10;
