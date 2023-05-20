@@ -54,22 +54,25 @@ class IfElseStatementTheme {
     //3.Проверка числа.
     System.out.println("\n\n3.Поиск max и min числа\n");
 
-    int anyNum = 0;
+    int anyNum = 4;
 
     if (anyNum == 0) {
         System.out.println("Число равно " + anyNum);
     } else {
+        System.out.println(anyNum);
+
         if (anyNum % 2 == 0) {
-            System.out.println(anyNum + " четное\n");
+            System.out.println("четное");
         } else {
-            System.out.println(anyNum + " нечетное\n");
+            System.out.println("нечетное");
         }
 
         if (anyNum < 0) {
-            System.out.println(anyNum + " отрицательное\n");
+            System.out.println("отрицательное");
         } else {
-            System.out.println(anyNum + " положительным\n");
+            System.out.println("положительным");
         }
+        
     }
 
     //4.Поиск одинаковых цифр в числах
@@ -120,14 +123,14 @@ class IfElseStatementTheme {
 
     if (deposit < 100_000) {
         percent = deposit / 100 * 5;
-        totalDeposit = percent + deposit;
     } else if (deposit >= 100_000 & deposit <= 300_000) {
         percent = deposit / 100 * 7;
-        totalDeposit = percent + deposit;
     } else if (deposit > 300_000) {
         percent = deposit / 100 * 10;
-        totalDeposit = percent + deposit;
     }
+
+    totalDeposit = percent + deposit;
+
     System.out.println(deposit + " сумма вклада\n" +
             percent + " начисленный процент\n" +
             totalDeposit + " итоговая сумма\n\n");
@@ -186,25 +189,26 @@ class IfElseStatementTheme {
     //9.Подсчет количества банкнот из банкомата
     System.out.println("\n\n9.Подсчет количества банкнот\n");
 
-    int cash = 567;
+    int cash = 599;
     int hundreds = cash / 100;
     int tens = cash / 10 % 10;
     int ones = cash % 10;
     int hundredsNum = 10;
     int tensNum = 5;
     int onesNum = 50;
+    int atmCash = 1100;
 
-    if (cash > 1100) {
+    if (cash > atmCash) {
         System.out.println("В банкомате нет такой суммы");
     } else {
-
-        if (hundreds < hundredsNum & tens > onesNum) {
-            tens = 5;
-            ones = cash - hundreds * 100 - 50;
-        } else if ((hundreds >= hundredsNum & hundreds < 11 & tens > tensNum) || (hundreds == 11 & tens == 0)) {
-            hundreds = 10;
-            tens = 5;
-            ones = cash - 1050;
+        if (hundreds < hundredsNum & tens > tensNum) {
+            tens = tensNum;
+            ones = cash - hundreds * 100 - onesNum;
+        } else if ((hundreds >= hundredsNum & hundreds <= hundredsNum & tens > tensNum) ||
+                        (hundreds > hundredsNum & tens == 0)) {
+            hundreds = hundredsNum;
+            tens = tensNum;
+            ones = cash - hundreds * 100 - onesNum;
         }
         System.out.println("Для выдачи " + cash + " USD необходимо:\n" +
                 hundreds + " банкнот номиналом 100 USD\n" +
