@@ -53,7 +53,6 @@ public class CyclesTheme {
     int numSum = 0;
     int reverseNum = 0;
 
-
     while (i < 4) {
         reverseNum = (num4 / k) % 10;
         numSum += reverseNum;
@@ -114,6 +113,7 @@ public class CyclesTheme {
 
     //6.Отображение фигур в консоли
     System.out.println("\n\n3.Вывод реверсивного числа суммы его цифр");
+
     int j;
 
     for (i = 0; i < 5; i++){
@@ -147,7 +147,7 @@ public class CyclesTheme {
             System.out.print("$");
             j++;
         }
-        System.out.println("");
+        System.out.println();
         i++;
 
         while (i > 3 & i < 6) {
@@ -180,11 +180,9 @@ public class CyclesTheme {
     //8. Проверка является ли число полиндромом
     System.out.println("\n\n8. Проверка является ли число полиндромом");
 
-
     num = 1234321;
     int lastDigit = 0; 
     int temp = num;
-
 
     for (reverseNum = 0; num > 0; num /= 10){
         lastDigit = num % 10;
@@ -200,7 +198,6 @@ public class CyclesTheme {
     //9. Определение, является ли число счастливым
     System.out.println("\n\n8. Определение, является ли число счастливым");
 
-    
     num = 123123;
     lastDigit = 0;
     int firstHalfSum = 0;
@@ -242,6 +239,5 @@ public class CyclesTheme {
             System.out.println();
         }
     }
-
  }
 }
