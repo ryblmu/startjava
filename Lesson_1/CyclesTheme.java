@@ -132,6 +132,7 @@ public class CyclesTheme {
             }
             System.out.println();
         }
+        System.out.println();
 
         int counter1 = 0;
         counter = 0;
