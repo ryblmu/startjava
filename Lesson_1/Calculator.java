@@ -1,0 +1,29 @@
+class Calculator {
+
+    public static void main (String[] args) {
+
+        int a = 5;
+        int b = 3;
+        int result = 0;
+        char sign = '%';
+
+        if (sign == '+') {
+            result = a + b;
+        } else if (sign == '-') {
+            result = a - b;
+        } else if (sign == '*') {
+            result = a * b;
+        } else if (sign == '/') {
+            result = a / b;
+        } else if (sign == '^') {
+            result = a;
+            for (int i = 0; i < b - 1; i++) {
+                result *= result;
+            }
+        } else if (sign == '%') {
+            result = a % b;
+        }
+
+        System.out.println(a + " " + sign + " " + b + " = " + result);
+    }
+}
