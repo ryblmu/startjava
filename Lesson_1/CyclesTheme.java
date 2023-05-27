@@ -5,20 +5,20 @@ public class CyclesTheme {
         System.out.println("1.Подсчет суммы четных и нечетных чисел");
 
         int counter = -10;
-        int evenNumSum = 0;
-        int oddNumSum = 0;
+        int sumEvenNum = 0;
+        int sumOddNum = 0;
 
         do {
             if (counter % 2 == 0) {
-                evenNumSum += counter;
+                sumEvenNum += counter;
             } else {
-                oddNumSum += counter;
+                sumOddNum += counter;
             }
             counter++;
         } while (counter <= 21);
 
-        System.out.println("в промежутке [-10, 21] сумма четных чисел = " + evenNumSum +
-                ", а нечетных = " + oddNumSum);
+        System.out.println("в промежутке [-10, 21] сумма четных чисел = " + sumEvenNum +
+                ", а нечетных = " + sumOddNum);
 
         //2.Вывод чисел в интервале (min и max) в порядке убывания
         System.out.println("\n2.Вывод чисел в интервале (min и max) в порядке убывания");
@@ -61,20 +61,20 @@ public class CyclesTheme {
         //4. Вывод чисел на консоль в несколько строк
         System.out.println("\n4.Вывод чисел на консоль в несколько строк");
         
-        num1 = 24;
-        int charactersNum = 0; 
+        int endSegment = 24;
+        int countNums = 0; 
 
-        for (int i = 1; i < num1; i += 2) {
+        for (int i = 1; i < endSegment; i += 2) {
             System.out.printf("%4d", i);
-            charactersNum++;
-            if (charactersNum % 5 == 0) {
+            countNums++;
+            if (countNums % 5 == 0) {
                 System.out.println();
-                charactersNum = 0;
+                countNums = 0;
             }
         }
 
-        if (charactersNum > 0) {
-            for (int i = 0; i < 5 - charactersNum; i++) {
+        if (countNums > 0) {
+            for (int i = 0; i < 5 - countNums; i++) {
                 System.out.printf("%4d", 0);
             }
         }
@@ -115,45 +115,43 @@ public class CyclesTheme {
         }
         System.out.println();
 
-        int stringSymbolNum = 0;
-        int columnNum = 0;
+        int numSymbolString = 0;
+        int numColumn = 0;
 
-        while (columnNum <= 5) {
-            stringSymbolNum = columnNum;
-            while (stringSymbolNum < 5) {
+        while (numColumn <= 5) {
+            numSymbolString = numColumn;
+            while (numSymbolString < 5) {
                 System.out.print("#");
-                stringSymbolNum++;
+                numSymbolString++;
             }
             System.out.println();
-            columnNum++;
+            numColumn++;
         }
 
-        stringSymbolNum = 0;
-        columnNum = 1;
-        int temp = 4;
+        numSymbolString = 0;
+        numColumn = 1;
+        int midColumn = 4;
 
         do {
-            if (columnNum < 4) {
-                temp = columnNum;
-            } else {
-                temp--;
-            }
-
             do {
-                if (columnNum < 4) {
+                if (numColumn < 4 || numColumn >= 4) {
                     System.out.print("$");
-                    stringSymbolNum++;
-                } else if (columnNum >= 4){
-                    System.out.print("$");
-                    stringSymbolNum++;
+                    numSymbolString++;
                 }
-            } while (stringSymbolNum < temp && temp >= 0);
+                
+                if (numColumn < 4) {
+                    midColumn = numColumn;
+                } else {
+                    midColumn--;
+                }
+            } while (numSymbolString < midColumn && midColumn >= 0);
 
             System.out.println();
 
-            stringSymbolNum = 0;
-            columnNum++;
-        } while (columnNum < 6);
+
+            numSymbolString = 0;
+            numColumn++;
+        } while (numColumn < 6);
 
         //7.Отображение ASCII-символов
         System.out.println("\n\n7.Отображение ASCII-символов");
@@ -176,7 +174,7 @@ public class CyclesTheme {
         System.out.println("\n\n8. Проверка является ли число палиндромом");
 
         num1 = 1234321;
-        temp = num1;
+        int temp = num1;
         int reverseNum = 0;
 
         for (reverseNum = 0; num1 > 0; num1 /= 10) {
