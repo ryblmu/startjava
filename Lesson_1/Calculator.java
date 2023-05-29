@@ -17,8 +17,6 @@ class Calculator {
         } else if (sign == '^') {
             if (a == 0) {
                 result = 0;
-            } else if (a == 1) {
-                result = 1;
             } else {
                 result = a;
                 for (int i = 1; i < b; i++) {
