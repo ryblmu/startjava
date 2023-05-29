@@ -16,7 +16,7 @@ class Calculator {
             result = a / b;
         } else if (sign == '^') {
             result = a;
-            for (int i = 0; i < b - 1; i++) {
+            for (int i = 1; i < b; i++) {
                 result *= a;
             }
         } else if (sign == '%') {
