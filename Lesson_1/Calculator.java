@@ -15,9 +15,13 @@ class Calculator {
         } else if (sign == '/') {
             result = a / b;
         } else if (sign == '^') {
-            result = a;
-            for (int i = 1; i < b; i++) {
-                result *= a;
+            if (a == 0) {
+                result = 1;
+            } else {
+                result = a;
+                for (int i = 1; i < b; i++) {
+                    result *= a;
+                }
             }
         } else if (sign == '%') {
             result = a % b;
