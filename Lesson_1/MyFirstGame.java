@@ -7,10 +7,10 @@ class MyFirstGame {
         while (playerNum != unknownNum) {
             if (playerNum < unknownNum) {
                 System.out.println("Число " + playerNum + " меньше того, что загадал компьютер");
-                playerNum += 1;
+                playerNum++;
             } else {
                 System.out.println("Число " + playerNum + " больше того, что загадал компьютер");
-                playerNum -= 1;
+                playerNum--;
             }
         }
 
