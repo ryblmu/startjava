@@ -1,4 +1,5 @@
 class Person {
+    
     String name = "Alice";
     int age = 25;
     int weight = 50;
@@ -7,12 +8,16 @@ class Person {
 
     public void walk() {
     }
+
     public void sit() {
     }
+
     public void run() {
     }
+
     public void speak() {
     }
+
     public void learnJava() {
     }
 }
