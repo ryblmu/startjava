@@ -19,14 +19,14 @@ public class CalculatorTest {
             calculator.setNum2(scanner.nextInt());
 
             System.out.print("Результат вычислений: ");
-            calculator.calculateResult();
+            calculator.calculate();
 
-            System.out.println("Хотите продолжить вычисления? [yes/no]");
-            userAnswer = scanner.next();
-
-            if (userAnswer.equals("no")) {
-                break;
+            do{
+                System.out.println("Хотите продолжить вычисления? [yes/no]");
+                userAnswer = scanner.next();
             }
+            while (!(userAnswer.equals("yes") || userAnswer.equals("no")));
+
         } while (userAnswer.equals("yes"));
     }
 }
