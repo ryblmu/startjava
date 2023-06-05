@@ -11,7 +11,8 @@ public class Jaeger {
     public Jaeger() {
     }
 
-    public Jaeger(String modelName, String mark, float height, float weight, int speed, int strength, int armor) {
+    public Jaeger(String modelName, String mark, float height,
+            float weight, int speed, int strength, int armor) {
         this.modelName = modelName;
         this.mark = mark;
         this.height = height;
@@ -77,8 +78,7 @@ public class Jaeger {
         this.armor = armor;
     }
 
-
-    public boolean isDrifting() {
+    public boolean isDrift() {
         System.out.println("вы вошли в дрифт") ;
         return true;
     }
