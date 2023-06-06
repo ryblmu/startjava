@@ -5,19 +5,15 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int unknownNum;
-    private Scanner scanner;
-    
-    public GuessNumber() {
-    }
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
 
-    public void playGame() {
+    public void play() {
         unknownNum = (int) (Math.random() * 100);
-        scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         do {
             System.out.println("Ход игрока под именем " + player1.getName());
@@ -55,6 +51,6 @@ public class GuessNumber {
                         " больше того, что загадал компьютер, ход переходит к первому игроку " +
                         player1.getName());
             }
-        } while (player1.getNum() != unknownNum || player2.getNum() != unknownNum);
+        } while (true);
     }
 }

@@ -3,11 +3,12 @@ public class Player {
     private String name;
     private int num;
 
-    public Player() {
-    }
-
     public Player(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setNum(int num) {
@@ -17,9 +18,4 @@ public class Player {
     public int getNum() {
         return num;
     }
-
-    public String getName() {
-        return name;
-    }
-
 }
