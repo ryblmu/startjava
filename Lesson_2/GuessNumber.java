@@ -12,7 +12,7 @@ public class GuessNumber {
     }
 
     public void play() {
-        unknownNum = (int) (Math.random() * 100);
+        unknownNum = (int) (1 + Math.random() * (100 + 1));
         Scanner scanner = new Scanner(System.in);
 
         do {
