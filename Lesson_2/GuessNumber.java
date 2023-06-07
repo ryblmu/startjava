@@ -17,7 +17,7 @@ public class GuessNumber {
 
         do {
             System.out.println("Ход игрока под именем " + player1.getName());
-            player1.num = scanner.nextInt();
+            player1.setNum(scanner.nextInt());
             
             if (player1.getNum() == unknownNum) {
                 System.out.println("Победил первый игрок по имени " + player1.getName());
@@ -35,7 +35,7 @@ public class GuessNumber {
             }
 
             System.out.println("Ход игрока под именем " + player2.getName());
-            player2.num = scanner.nextInt();
+            player2.setNum(scanner.nextInt());
 
             if (player2.getNum() == unknownNum) {
                 System.out.println("Победил второй игрок по имени " + player2.getName());
