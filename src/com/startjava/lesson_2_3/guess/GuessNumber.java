@@ -1,7 +1,7 @@
-package com.startjava.lesson_2_3.guess;
+package src.com.startjava.lesson_2_3.guess;
 
 import java.util.Scanner;
-import com.startjava.lesson_2_3.person.Player;
+import src.com.startjava.lesson_2_3.person.Player;
 
 public class GuessNumber {
 
