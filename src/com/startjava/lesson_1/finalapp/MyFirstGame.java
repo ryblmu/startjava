@@ -1,4 +1,4 @@
-package src.com.startjava.lesson_1.finalapp;
+package com.startjava.lesson_1.finalapp;
 
 class MyFirstGame {
 
