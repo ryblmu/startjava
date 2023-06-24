@@ -4,14 +4,7 @@ public class ArrayTheme {
 
     public static void main(String[] args) {
 //        reverseArray();
-        int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int ratio = 1;
 
-        for (int i = 1; i < array.length - 1; i++) {
-            ratio *= array[i];
-        }
-
-        if (ratio > 1) ? System.out.println(ratio);
     }
 
     private static void reverseArray() {
@@ -34,6 +27,22 @@ public class ArrayTheme {
 
         for (int i : array) {
             System.out.print(i + " ");
+        }
+    }
+
+    public static void ratioOfArrayElements() {
+        System.out.println("2. Вывод произведения элементов массива");
+
+        int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int ratio = 1;
+
+        for (int i = 1; i < array.length - 1; i++) {
+            ratio *= array[i];
+            System.out.print( i < array.length -2 ? i + " * " : i + " = " + ratio + "\n");
+        }
+
+        for (int i : array) {
+            if (array[i] == 0 || array[i] == 9) System.out.print(i + " ");
         }
     }
 }
