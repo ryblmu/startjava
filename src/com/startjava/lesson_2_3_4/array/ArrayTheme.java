@@ -3,9 +3,10 @@ package com.startjava.lesson_2_3_4.array;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-        reverseArray();
-        ratioOfArrayElements();
-        deleteElementsFromArray();
+//        reverseArray();
+//        ratioOfArrayElements();
+//        deleteElementsFromArray();
+//        outputOfArrayElements();
 
     }
 
@@ -80,4 +81,20 @@ public class ArrayTheme {
         System.out.println("\nКоличество обнуленных ячеек: "+ zeroCount);
     }
 
+    public static void outputOfArrayElements() {
+        System.out.println("4.Вывод элемента массивов лесенкой в обратном порядке");
+        char[] array = new char[26];
+        int firstChar = 65;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (char) firstChar++;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            for (int k = array.length - 1; k >= array.length - 1 - i; k--) {
+                System.out.print(array[k]);
+            }
+            System.out.println();
+        }
+    }
 }
