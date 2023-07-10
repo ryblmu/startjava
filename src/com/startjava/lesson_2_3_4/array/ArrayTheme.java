@@ -10,7 +10,6 @@ public class ArrayTheme {
         deleteElementsFromArray();
         outputOfArrayElements();
         generateUniqNumbers();
-
     }
 
     private static void reverseArray() {
@@ -126,7 +125,6 @@ public class ArrayTheme {
             if (++countOfArrayElements % 10 == 0) {
                 System.out.println();
             }
-
         }
     }
 }
