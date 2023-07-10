@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.util.Arrays;
+
 public class ArrayTheme {
 
     public static void main(String[] args) {
@@ -7,7 +9,29 @@ public class ArrayTheme {
 //        ratioOfArrayElements();
 //        deleteElementsFromArray();
 //        outputOfArrayElements();
+        int[] array = new int[30];
 
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * (100 - 60)) + 60;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            for (int k = 0; k < array.length; k++) {
+                if (array[i] == array[k] && i != k) {
+                    array[k] = (int) (Math.random() * (100 - 60)) + 60;
+                    i = 0;
+                }
+            }
+        }
+
+        Arrays.sort(array);
+
+        for (int i = 0; i < array.length; i++) {
+            for (int k = 0; k < 10; k++) {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+        }
     }
 
     private static void reverseArray() {
