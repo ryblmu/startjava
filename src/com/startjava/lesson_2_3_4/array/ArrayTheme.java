@@ -5,33 +5,12 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-//        reverseArray();
-//        ratioOfArrayElements();
-//        deleteElementsFromArray();
-//        outputOfArrayElements();
-        int[] array = new int[30];
+        reverseArray();
+        ratioOfArrayElements();
+        deleteElementsFromArray();
+        outputOfArrayElements();
+        generateUniqNumbers();
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * (100 - 60)) + 60;
-        }
-
-        for (int i = 0; i < array.length; i++) {
-            for (int k = 0; k < array.length; k++) {
-                if (array[i] == array[k] && i != k) {
-                    array[k] = (int) (Math.random() * (100 - 60)) + 60;
-                    i = 0;
-                }
-            }
-        }
-
-        Arrays.sort(array);
-
-        for (int i = 0; i < array.length; i++) {
-            for (int k = 0; k < 10; k++) {
-                System.out.print(array[i] + " ");
-            }
-            System.out.println();
-        }
     }
 
     private static void reverseArray() {
@@ -119,6 +98,35 @@ public class ArrayTheme {
                 System.out.print(array[k]);
             }
             System.out.println();
+        }
+    }
+
+    public static void generateUniqNumbers() {
+        System.out.println("5.Генерация уникальных чисел");
+        int[] array = new int[30];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * (100 - 60)) + 60;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            for (int k = 0; k < array.length; k++) {
+                if (array[i] == array[k] && i != k) {
+                    array[k] = (int) (Math.random() * (100 - 60)) + 60;
+                    i = 0;
+                }
+            }
+        }
+
+        Arrays.sort(array);
+        int countOfArrayElements = 0;
+
+        for (int j : array) {
+            System.out.print(j + " ");
+            if (++countOfArrayElements % 10 == 0) {
+                System.out.println();
+            }
+
         }
     }
 }
