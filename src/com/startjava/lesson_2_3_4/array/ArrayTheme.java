@@ -55,7 +55,7 @@ public class ArrayTheme {
     }
 
     public static void deleteElementsFromArray() {
-        System.out.println("\n\n3.Удаление элементов массива");
+        System.out.println("\n3.Удаление элементов массива");
 
         double[] arrayOfRealNumbers = new double[15];
         //инициализация массива 15 вещественными числами
