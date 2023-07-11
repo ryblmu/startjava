@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-//        reverseArray();
-//        outputProductOfArrayElements();
-         deleteElementsFromArray();
-//        outputOfArrayElements();
-//        generateUniqNumbers();
+        reverseArray();
+        outputProductOfArrayElements();
+        deleteElementsFromArray();
+        outputOfArrayElements();
+        generateUniqNumbers();
     }
 
     private static void reverseArray() {
@@ -85,16 +85,16 @@ public class ArrayTheme {
 
     public static void outputOfArrayElements() {
         System.out.println("\n4.Вывод элемента массивов лесенкой в обратном порядке");
-        char[] array = new char[26];
+        char[] arrayOfChars = new char[26];
         int firstChar = 65;
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (char) firstChar++;
+        for (int i = 0; i < arrayOfChars.length; i++) {
+            arrayOfChars[i] = (char) firstChar++;
         }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int k = array.length - 1; k >= array.length - 1 - i; k--) {
-                System.out.print(array[k]);
+        for (int i = 0; i < arrayOfChars.length; i++) {
+            for (int k = arrayOfChars.length - 1; k >= arrayOfChars.length - 1 - i; k--) {
+                System.out.print(arrayOfChars[k]);
             }
             System.out.println();
         }
@@ -102,25 +102,25 @@ public class ArrayTheme {
 
     public static void generateUniqNumbers() {
         System.out.println("\n5.Генерация уникальных чисел");
-        int[] array = new int[30];
+        int[] arrayOfNumbers = new int[30];
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * (100 - 60)) + 60;
+        for (int i = 0; i < arrayOfNumbers.length; i++) {
+            arrayOfNumbers[i] = (int) (Math.random() * (100 - 60)) + 60;
         }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int k = 0; k < array.length; k++) {
-                if (array[i] == array[k] && i != k) {
-                    array[k] = (int) (Math.random() * (100 - 60)) + 60;
+        for (int i = 0; i < arrayOfNumbers.length; i++) {
+            for (int k = 0; k < arrayOfNumbers.length; k++) {
+                if (arrayOfNumbers[i] == arrayOfNumbers[k] && i != k) {
+                    arrayOfNumbers[k] = (int) (Math.random() * (100 - 60)) + 60;
                     i = 0;
                 }
             }
         }
 
-        Arrays.sort(array);
+        Arrays.sort(arrayOfNumbers);
         int countOfArrayElements = 0;
 
-        for (int j : array) {
+        for (int j : arrayOfNumbers) {
             System.out.print(j + " ");
             if (++countOfArrayElements % 10 == 0) {
                 System.out.println();
