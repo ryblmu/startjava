@@ -5,67 +5,67 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-        reverseArray();
-        ratioOfArrayElements();
-        deleteElementsFromArray();
-        outputOfArrayElements();
-        generateUniqNumbers();
+//        reverseArray();
+//        outputProductOfArrayElements();
+         deleteElementsFromArray();
+//        outputOfArrayElements();
+//        generateUniqNumbers();
     }
 
     private static void reverseArray() {
         System.out.println("1.Реверс значений массива");
 
-        int[] array = {3, 6, 2, 5, 1, 4, 7};
-        int[] invertedArray = new int[array.length];
-        int arrayIndex = 0;
+        int[] arrayOfNumbers = {3, 6, 2, 5, 1, 4, 7};
 
-        System.out.println("Значения массива array до модификации и после:");
-
-        for (int i = array.length-1; i >= 0; i--) {
-            System.out.print(array[arrayIndex] + " ");
-            invertedArray[arrayIndex++] = array[i];
+        System.out.println("Значения массива до перестановки: ");
+        for (int i : arrayOfNumbers) {
+            System.out.print(i + " ");
         }
 
         System.out.println();
+        int temp = 0;
 
-        array = invertedArray;
-
-        for (int i : array) {
+        for (int i = 0; i < arrayOfNumbers.length / 2; i++) {
+            temp = arrayOfNumbers[i];
+            arrayOfNumbers[i] = arrayOfNumbers[arrayOfNumbers.length - i - 1];
+            arrayOfNumbers[arrayOfNumbers.length - i - 1] = temp;
+        }
+        System.out.println("Значения массива после перестановки: ");
+        for (int i : arrayOfNumbers) {
             System.out.print(i + " ");
         }
     }
 
-    public static void ratioOfArrayElements() {
-        System.out.println("\n2.Вывод произведения элементов массива");
+    public static void outputProductOfArrayElements() {
+        System.out.println("\n\n2.Вывод произведения элементов массива");
 
-        int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int ratio = 1;
+        int[] arrayOfIntNumbers = new int[10];
+        int product = 1;
 
-        for (int i = 1; i < array.length - 1; i++) {
-            ratio *= array[i];
-            System.out.print( i < array.length -2 ? i + " * " : i + " = " + ratio + "\n");
+        for (int i = 0; i < arrayOfIntNumbers.length; i++) {
+            arrayOfIntNumbers[i] = i;
         }
 
-        for (int i : array) {
-            if (array[i] == 0 || array[i] == 9) System.out.print(i + " ");
+        for (int i = 1; i < arrayOfIntNumbers.length - 1; i++) {
+            product *= arrayOfIntNumbers[i];
+            System.out.print( i < arrayOfIntNumbers.length - 2 ? i + " * " : i + " = " + product + "\n");
         }
+
+        System.out.println(arrayOfIntNumbers[0] + " " + arrayOfIntNumbers[9]);
     }
 
     public static void deleteElementsFromArray() {
-        System.out.println("\n3.Удаление элементов массива");
+        System.out.println("\n\n3.Удаление элементов массива");
 
-        int arraySize = 15;
-        double[] array = new double[arraySize];
-        int midIndex = (arraySize-1) / 2;
-
-        for (int i = 0; i < arraySize; i++) {
-            array[i] = Math.random();
+        double[] arrayOfRealNumbers = new double[15];
+        //инициализация массива 15 вещественными числами
+        for (int i = 0; i < arrayOfRealNumbers.length; i++) {
+            arrayOfRealNumbers[i] = Math.random();
         }
 
-        double number = array[midIndex];
-        double[] arrayWithZero = array;
+        double number = arrayOfRealNumbers[(arrayOfRealNumbers.length - 1) / 2];
 
-        for (double element : array) {
+        for (double element : arrayOfRealNumbers) {
             System.out.printf("%,.3f ", element);
         }
 
@@ -73,18 +73,18 @@ public class ArrayTheme {
 
         int zeroCount = 0;
 
-        for (int i = 0; i < arraySize; i++) {
-            if (arrayWithZero[i] > number) {
-                arrayWithZero[i] = 0;
+        for (int i = 0; i < arrayOfRealNumbers.length; i++) {
+            if (arrayOfRealNumbers[i] > number) {
+                arrayOfRealNumbers[i] = 0;
                 zeroCount++;
             }
-            System.out.printf("%,.3f ", arrayWithZero[i]);
+            System.out.printf("%,.3f ", arrayOfRealNumbers[i]);
         }
-        System.out.println("\nКоличество обнуленных ячеек: "+ zeroCount);
+        System.out.println("\nКоличество обнуленных ячеек: " + zeroCount);
     }
 
     public static void outputOfArrayElements() {
-        System.out.println("4.Вывод элемента массивов лесенкой в обратном порядке");
+        System.out.println("\n4.Вывод элемента массивов лесенкой в обратном порядке");
         char[] array = new char[26];
         int firstChar = 65;
 
@@ -101,7 +101,7 @@ public class ArrayTheme {
     }
 
     public static void generateUniqNumbers() {
-        System.out.println("5.Генерация уникальных чисел");
+        System.out.println("\n5.Генерация уникальных чисел");
         int[] array = new int[30];
 
         for (int i = 0; i < array.length; i++) {
