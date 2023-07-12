@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-//        reverseArray();
-//        outputProductOfArrayElements();
-//        deleteElementsFromArray();
-//        outputOfArrayElementsReverseOrder();
+        reverseArray();
+        outputProductOfArrayElements();
+        deleteElementsFromArray();
+        outputOfArrayElementsReverseOrder();
         generateUniqueNumbers();
     }
 
