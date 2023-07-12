@@ -30,7 +30,7 @@ public class ArrayTheme {
             arrayOfNumbers[i] = arrayOfNumbers[size - i - 1];
             arrayOfNumbers[size - i - 1] = temp;
         }
-        System.out.println("Значения массива после перестановки: ");
+        System.out.println("\nЗначения массива после перестановки: ");
         for (int i : arrayOfNumbers) {
             System.out.print(i + " ");
         }
