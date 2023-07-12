@@ -5,30 +5,30 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-        reverseArray();
-        outputProductOfArrayElements();
-        deleteElementsFromArray();
-        outputOfArrayElements();
-        generateUniqNumbers();
+//        reverseArray();
+//        outputProductOfArrayElements();
+//        deleteElementsFromArray();
+//        outputOfArrayElementsReverseOrder();
+        generateUniqueNumbers();
     }
 
     private static void reverseArray() {
         System.out.println("1.Реверс значений массива");
 
         int[] arrayOfNumbers = {3, 6, 2, 5, 1, 4, 7};
+        int size = arrayOfNumbers.length;
 
         System.out.println("Значения массива до перестановки: ");
         for (int i : arrayOfNumbers) {
             System.out.print(i + " ");
         }
 
-        System.out.println();
         int temp = 0;
 
-        for (int i = 0; i < arrayOfNumbers.length / 2; i++) {
+        for (int i = 0; i < size / 2; i++) {
             temp = arrayOfNumbers[i];
-            arrayOfNumbers[i] = arrayOfNumbers[arrayOfNumbers.length - i - 1];
-            arrayOfNumbers[arrayOfNumbers.length - i - 1] = temp;
+            arrayOfNumbers[i] = arrayOfNumbers[size - i - 1];
+            arrayOfNumbers[size - i - 1] = temp;
         }
         System.out.println("Значения массива после перестановки: ");
         for (int i : arrayOfNumbers) {
@@ -41,14 +41,15 @@ public class ArrayTheme {
 
         int[] arrayOfIntNumbers = new int[10];
         int product = 1;
+        int size = arrayOfIntNumbers.length;
 
-        for (int i = 0; i < arrayOfIntNumbers.length; i++) {
+        for (int i = 0; i < size; i++) {
             arrayOfIntNumbers[i] = i;
         }
 
-        for (int i = 1; i < arrayOfIntNumbers.length - 1; i++) {
+        for (int i = 1; i < size - 1; i++) {
             product *= arrayOfIntNumbers[i];
-            System.out.print( i < arrayOfIntNumbers.length - 2 ? i + " * " : i + " = " + product + "\n");
+            System.out.print( i < size - 2 ? i + " * " : i + " = " + product + "\n");
         }
 
         System.out.println(arrayOfIntNumbers[0] + " " + arrayOfIntNumbers[9]);
@@ -57,71 +58,74 @@ public class ArrayTheme {
     public static void deleteElementsFromArray() {
         System.out.println("\n3.Удаление элементов массива");
 
-        double[] arrayOfRealNumbers = new double[15];
-        //инициализация массива 15 вещественными числами
-        for (int i = 0; i < arrayOfRealNumbers.length; i++) {
-            arrayOfRealNumbers[i] = Math.random();
+        double[] realNumbers = new double[15];
+        int size = realNumbers.length;
+
+        for (int i = 0; i < size; i++) {
+            realNumbers[i] = Math.random();
         }
 
-        double number = arrayOfRealNumbers[(arrayOfRealNumbers.length - 1) / 2];
+        double middleCellValue = realNumbers[(size - 1) / 2];
 
-        for (double element : arrayOfRealNumbers) {
-            System.out.printf("%,.3f ", element);
+        for (int i = 0; i < 8; i++) {
+            System.out.printf("%,.3f ", realNumbers[i]);
         }
 
         System.out.println();
 
         int zeroCount = 0;
 
-        for (int i = 0; i < arrayOfRealNumbers.length; i++) {
-            if (arrayOfRealNumbers[i] > number) {
-                arrayOfRealNumbers[i] = 0;
+        for (int i = 0; i < 7; i++) {
+            if (realNumbers[i] > middleCellValue) {
+                realNumbers[i] = 0;
                 zeroCount++;
             }
-            System.out.printf("%,.3f ", arrayOfRealNumbers[i]);
+            System.out.printf("%,.3f ", realNumbers[i]);
         }
         System.out.println("\nКоличество обнуленных ячеек: " + zeroCount);
     }
 
-    public static void outputOfArrayElements() {
-        System.out.println("\n4.Вывод элемента массивов лесенкой в обратном порядке");
-        char[] arrayOfChars = new char[26];
-        int firstChar = 65;
+    public static void outputOfArrayElementsReverseOrder() {
+        System.out.println("\n4.Вывод элементов массива лесенкой в обратном порядке");
 
-        for (int i = 0; i < arrayOfChars.length; i++) {
-            arrayOfChars[i] = (char) firstChar++;
+        char[] alphabet = new char[26];
+        int size = alphabet.length;
+
+        for (int i = 0; i < size; i++) {
+            alphabet[i] = (char) ('A' + i);
         }
 
-        for (int i = 0; i < arrayOfChars.length; i++) {
-            for (int k = arrayOfChars.length - 1; k >= arrayOfChars.length - 1 - i; k--) {
-                System.out.print(arrayOfChars[k]);
+        for (int i = 0; i < size; i++) {
+            for (int j = size - 1; j >= size - 1 - i; j--) {
+                System.out.print(alphabet[j]);
             }
             System.out.println();
         }
     }
 
-    public static void generateUniqNumbers() {
+    public static void generateUniqueNumbers() {
         System.out.println("\n5.Генерация уникальных чисел");
-        int[] arrayOfNumbers = new int[30];
 
-        for (int i = 0; i < arrayOfNumbers.length; i++) {
-            arrayOfNumbers[i] = (int) (Math.random() * (100 - 60)) + 60;
-        }
+        int[] uniqueNumbers = new int[30];
+        int size = uniqueNumbers.length;
 
-        for (int i = 0; i < arrayOfNumbers.length; i++) {
-            for (int k = 0; k < arrayOfNumbers.length; k++) {
-                if (arrayOfNumbers[i] == arrayOfNumbers[k] && i != k) {
-                    arrayOfNumbers[k] = (int) (Math.random() * (100 - 60)) + 60;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == j) {
+                    uniqueNumbers[j] = (int) (Math.random() * (100 - 60)) + 60;
+                }
+                if ((uniqueNumbers[i] == uniqueNumbers[j] && i != j)) {
+                    uniqueNumbers[j] = (int) (Math.random() * (100 - 60)) + 60;
                     i = 0;
                 }
             }
         }
 
-        Arrays.sort(arrayOfNumbers);
+        Arrays.sort(uniqueNumbers);
         int countOfArrayElements = 0;
 
-        for (int j : arrayOfNumbers) {
-            System.out.print(j + " ");
+        for (int number : uniqueNumbers) {
+            System.out.print(number + " ");
             if (++countOfArrayElements % 10 == 0) {
                 System.out.println();
             }
